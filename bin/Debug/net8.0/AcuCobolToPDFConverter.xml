@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AcuCobolToPDFConverter</name>
+    </assembly>
+    <members>
+        <member name="T:AcuCobolToPDFConverter.AcuCobolInterface">
+            <summary>
+            Provides methods for interfacing with AcuCobol data files, including record extraction.
+            </summary>
+        </member>
+        <member name="M:AcuCobolToPDFConverter.AcuCobolInterface.ExtractRecords(System.String)">
+            <summary>
+            Asynchronously extracts records from the specified AcuCobol data file.
+            This method simulates the extraction process, which should involve invoking AcuCobol-specific utilities or libraries.
+            </summary>
+            <param name="filePath">The file path to the AcuCobol data file.</param>
+            <returns>A task representing the asynchronous operation, containing a list of RecordModel objects.</returns>
+        </member>
+        <member name="T:AcuCobolToPDFConverter.Logger">
+            <summary>
+            Provides logging functionality for the application using Serilog.
+            </summary>
+        </member>
+        <member name="M:AcuCobolToPDFConverter.Logger.Initialize">
+            <summary>
+            Initializes the logger with specified configurations.
+            Sets the minimum log level and specifies log outputs (console and file).
+            </summary>
+        </member>
+        <member name="M:AcuCobolToPDFConverter.Logger.LogMessage(System.String)">
+            <summary>
+            Logs an informational message to the log.
+            </summary>
+            <param name="message">The message to log.</param>
+        </member>
+        <member name="M:AcuCobolToPDFConverter.Logger.LogError(System.String)">
+            <summary>
+            Logs an error message to the log.
+            </summary>
+            <param name="message">The error message to log.</param>
+        </member>
+        <member name="T:AcuCobolToPDFConverter.Models.RecordModel">
+            <summary>
+            Represents a single record extracted from the COBOL system.
+            Adjust the properties to match the actual COBOL record structure.
+            </summary>
+        </member>
+        <member name="P:AcuCobolToPDFConverter.Models.RecordModel.RecordId">
+            <summary>
+            Unique identifier for the record.
+            </summary>
+        </member>
+        <member name="P:AcuCobolToPDFConverter.Models.RecordModel.RecordName">
+            <summary>
+            Name or title of the record.
+            </summary>
+        </member>
+        <member name="P:AcuCobolToPDFConverter.Models.RecordModel.RecordDate">
+            <summary>
+            Date associated with the record.
+            </summary>
+        </member>
+        <member name="P:AcuCobolToPDFConverter.Models.RecordModel.RecordData">
+            <summary>
+            Main data of the record, this could represent a description, details, or content.
+            </summary>
+        </member>
+        <member name="P:AcuCobolToPDFConverter.Models.RecordModel.Metadata">
+            <summary>
+            Additional metadata or attributes from the COBOL system.
+            </summary>
+        </member>
+        <member name="T:AcuCobolToPDFConverter.PDFGenerator">
+            <summary>
+            Provides methods for generating PDF documents from AcuCobol records.
+            </summary>
+        </member>
+        <member name="M:AcuCobolToPDFConverter.PDFGenerator.GeneratePDFs(System.Collections.Generic.List{AcuCobolToPDFConverter.Models.RecordModel},System.String)">
+            <summary>
+            Generates a PDF for each record in the provided list of records.
+            Each PDF is saved in the specified output directory.
+            </summary>
+            <param name="records">A list of <see cref="T:AcuCobolToPDFConverter.Models.RecordModel"/> objects to convert to PDF.</param>
+            <param name="outputDirectory">The directory to save the generated PDFs.</param>
+        </member>
+        <member name="T:AcuCobolToPDFConverter.Program">
+            <summary>
+            Entry point for the AcuCobolToPDFConverter application.
+            </summary>
+        </member>
+        <member name="M:AcuCobolToPDFConverter.Program.Main(System.String[])">
+            <summary>
+            Main method that starts the application.
+            </summary>
+            <param name="args">Command line arguments (not used).</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:AcuCobolToPDFConverter.RecordProcessor">
+            <summary>
+            Provides methods for processing AcuCobol records, including extraction and PDF conversion.
+            </summary>
+        </member>
+        <member name="M:AcuCobolToPDFConverter.RecordProcessor.ExtractAndConvertRecords(System.String)">
+            <summary>
+            Asynchronously extracts records from a specified file path and converts them to PDFs.
+            </summary>
+            <param name="filePath">The path to the file containing AcuCobol records.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+    </members>
+</doc>
