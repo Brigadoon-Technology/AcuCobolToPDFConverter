@@ -1,34 +1,35 @@
+// File: RecordModel.cs
 namespace AcuCobolToPDFConverter.Models
 {
     /// <summary>
     /// Represents a single record extracted from the COBOL system.
-    /// Adjust the properties to match the actual COBOL record structure.
+    /// This class serves as the data structure to hold the necessary information from a COBOL record.
     /// </summary>
     public class RecordModel
     {
         /// <summary>
-        /// Unique identifier for the record.
+        /// Gets or sets the unique identifier for the record.
         /// </summary>
         public int RecordId { get; set; }
 
         /// <summary>
-        /// Name or title of the record.
+        /// Gets or sets the name or title of the record.
         /// </summary>
-        public string RecordName { get; set; } = string.Empty; // Initialize to empty string
+        public string RecordName { get; set; } = string.Empty;
 
         /// <summary>
-        /// Date associated with the record.
+        /// Gets or sets the date associated with the record.
         /// </summary>
-        public DateTime RecordDate { get; set; } = DateTime.MinValue; // Initialize to a default date
+        public DateTime RecordDate { get; set; } = DateTime.MinValue;
 
         /// <summary>
-        /// Main data of the record, this could represent a description, details, or content.
+        /// Gets or sets the main data of the record, which could represent a description, details, or content.
         /// </summary>
-        public string RecordData { get; set; } = string.Empty; // Initialize to empty string
+        public string RecordData { get; set; } = string.Empty;
 
         /// <summary>
-        /// Additional metadata or attributes from the COBOL system.
+        /// Gets or sets additional metadata or attributes from the COBOL system.
         /// </summary>
-        public string Metadata { get; set; } = string.Empty; // Initialize to empty string
+        public string Metadata { get; set; } = string.Empty;
     }
 }

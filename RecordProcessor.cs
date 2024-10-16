@@ -23,7 +23,6 @@ namespace AcuCobolToPDFConverter
 
             // Specify the output directory for PDFs
             string outputDirectory = @"path\to\output\directory";
-            
 
             // Generate PDFs for the extracted records
             PDFGenerator.GeneratePDFs(records, outputDirectory);

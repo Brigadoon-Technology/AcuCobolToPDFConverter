@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings> <!-- Enables implicit using directives -->
+    <Nullable>enable</Nullable>             <!-- Enables nullable reference types -->
+    <LangVersion>preview</LangVersion>      <!-- Optional: Enables the latest language features -->
+    <EnableDefaultItems>true</EnableDefaultItems> <!-- Enables default inclusion of common files -->
+  </PropertyGroup>
+
+  <!-- Package references for required libraries -->
+  <ItemGroup>
+    <PackageReference Include="itext7" Version="8.0.5" />
+    <PackageReference Include="Serilog" Version="4.0.2" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" /> <!-- Serilog file sink -->
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+    <PackageReference Include="System.Data.Odbc" Version="8.0.1" /> <!-- General logging interface -->
+  </ItemGroup>
+
+  <!-- Optional: Add platform-specific or conditional dependencies if needed -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <!-- Add any platform-specific or conditional dependencies here -->
+  </ItemGroup>
+
+  <!-- Additional options -->
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile> <!-- Generates XML documentation -->
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>         <!-- Controls strictness of warnings -->
+  </PropertyGroup>
+
+</Project>

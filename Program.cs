@@ -1,5 +1,4 @@
-﻿// File: Program.cs
-using System;
+﻿using System;
 using System.Threading.Tasks;
 
 namespace AcuCobolToPDFConverter
@@ -12,17 +11,35 @@ namespace AcuCobolToPDFConverter
         /// <summary>
         /// Main method that starts the application.
         /// </summary>
-        /// <param name="args">Command line arguments (not used).</param>
+        /// <param name="args">Command line arguments.</param>
         /// <returns>A task representing the asynchronous operation.</returns>
         static async Task Main(string[] args)
         {
-            Console.WriteLine("Starting Acucobol record extraction and PDF conversion...");
+            // Initialize the logger
+            Logger.Initialize();
 
-            // Define the file path where Acucobol records are stored (this can be updated to the actual file path)
-            string acucobolFilePath = @"path\to\acucobol\file";
+            Console.WriteLine("Starting AcuCobol record extraction and PDF conversion...");
 
-            // Start the extraction and conversion process
-            await RecordProcessor.ExtractAndConvertRecords(acucobolFilePath);
+            // Define the directory path to scan
+            string directoryPath = @"path\to\acucobol\directory";
+
+            try
+            {
+                // Step 1: Scan the directory to identify and group files
+                var files = DirectoryScanner.ScanDirectory(directoryPath);
+
+                // Step 2: Process each file
+                foreach (var filePath in files)
+                {
+                    await RecordProcessor.ExtractAndConvertRecords(filePath);
+                }
+
+                Logger.LogMessage("All files processed successfully.");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error occurred during processing: {ex.Message}");
+            }
 
             Console.WriteLine("Process complete.");
         }
